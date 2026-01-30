@@ -1,6 +1,7 @@
 services:
   flat-alert:
     image: ghcr.io/eisimo/flat-alert:latest
+    container_name: flat-alert-app
     volumes:
       - ./data:/app/data
     env_file:
@@ -11,4 +12,4 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30
+    command: --interval 30 flat-alert-app
