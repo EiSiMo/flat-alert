@@ -1,8 +1,14 @@
 services:
   flat-alert:
-    build: .
+    image: ghcr.io/eisimo/flat-alert:latest
     volumes:
       - ./data:/app/data
     env_file:
       - .env
     restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
