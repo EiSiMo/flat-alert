@@ -17,7 +17,7 @@ def setup_logging():
         level=logging.INFO,
         format="%(message)s",
         datefmt="[%X]",
-        handlers=[RichHandler(markup=True, console=Console(width=130))]
+        handlers=[RichHandler(markup=True, console=Console(width=120))]
     )
     logging.getLogger("googlemaps").setLevel(logging.WARNING)
 
@@ -27,18 +27,22 @@ setup_logging()
 
 class FlatAlerter:
     def __init__(self):
+        self.ensure_data_dir()
         self.checked_ids = self.load_checked_ids()
 
+    def ensure_data_dir(self):
+        os.makedirs(os.path.dirname(ALREADY_NOTIFIED_FILE), exist_ok=True)
+
     def load_checked_ids(self):
-        if not os.path.exists("already_notified.txt"):
+        if not os.path.exists(ALREADY_NOTIFIED_FILE):
             return list()
-        with open("already_notified.txt", "r") as f:
+        with open(ALREADY_NOTIFIED_FILE, "r") as f:
             return list(line.strip() for line in f.read().splitlines())
 
     def save_checked_id(self, flat_id):
         if flat_id not in self.checked_ids:
             self.checked_ids.append(flat_id)
-            with open("already_notified.txt", "a") as f:
+            with open(ALREADY_NOTIFIED_FILE, "a") as f:
                 f.write(f"{flat_id}\n")
 
     def compose_message(self, flat):
