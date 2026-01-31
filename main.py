@@ -16,7 +16,7 @@ def setup_logging():
         level=logging.INFO,
         format="%(message)s",
         datefmt="[%X]",
-        handlers=[RichHandler(markup=True, console=Console(width=120))]
+        handlers=[RichHandler(markup=True, console=Console(width=110))]
     )
     logging.getLogger("googlemaps").setLevel(logging.WARNING)
 
