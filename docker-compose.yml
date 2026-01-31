@@ -1,7 +1,7 @@
 services:
   flat-alert:
     image: ghcr.io/eisimo/flat-alert:latest
-    container_name: flat-alert-app
+    container_name: flat-alert
     volumes:
       - ./data:/app/data
     env_file:
