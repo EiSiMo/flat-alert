@@ -3,7 +3,7 @@ import logging
 import requests
 from settings import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
 
-logger = logging.getLogger("flat-alert (telegram.py)")
+logger = logging.getLogger("flat-alert")
 
 class Telegram:
     def send_message(self, msg):

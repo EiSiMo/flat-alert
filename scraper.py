@@ -4,7 +4,7 @@ import logging
 from bs4 import BeautifulSoup
 from settings import BERLIN_WOHNEN_USERNAME, BERLIN_WOHNEN_PASSWORD
 
-logger = logging.getLogger("flat-alert (scraper.py)")
+logger = logging.getLogger("flat-alert")
 
 class Scraper:
     URL_LOGIN = 'https://www.inberlinwohnen.de/login'

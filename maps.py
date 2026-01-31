@@ -4,7 +4,7 @@ import googlemaps
 from datetime import datetime, timedelta, time as dt_time
 from settings import GMAPS_API_KEY
 
-logger = logging.getLogger("flat-alert (maps.py)")
+logger = logging.getLogger("flat-alert")
 
 class Maps:
     DESTINATIONS = {
