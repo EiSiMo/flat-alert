@@ -1,52 +1,58 @@
-# flat-alert
-### description
-Everybody knows that finding a flat in Berlin is absolute hell.
-But you can get access to state-subsidized housing by applying for a WBS (housing entitlement certificate) when your income is low enough.
-When you got a WBS you can use inberlinwohnen.de to find your new flat. On this website new ads for cheap flats are
-published every day. The problem is that there is no waiting list.
-You just apply for each flat and be drawn at random for a chance to move in.
-Unfortunately the number of people that can apply for one flat is limited to a few hundred.
-So if this number is reached the ad will be offline. This often takes just an hour or less.
-So to find your dream apartment you would have to visit inberlinwohnen.de every hour day.
+# Flat Alert
 
-So to solve this problem I created this Telegram bot which will send you notifications if new flats get published.
-It scans once every minute 24 hours a day.
-You also can set filters about size, price, region, public transport connections and more.
+## Description
 
-### technology
-This program is written as a docker container which can run on every device and can easily be installed.
-Personally I have it running on my Raspberry Pi 5 as it does not consume much power.
-For scraping the website playwright is being used.
-The Google Maps API is being used to calculate how good the flat is connected to important transport hubs by public transport.
-Telegram is used to communicate with the user.
+Finding an apartment in Berlin is notoriously difficult. However, those with a WBS (housing entitlement certificate) can access state-subsidized housing via inberlinwohnen.de. New listings appear daily, but there is no waiting list; applicants are selected at random. Crucially, the number of applications per listing is capped, often causing ads to disappear within an hour. This necessitates constant monitoring of the website.
 
-### requirements
-You need:
-* account on inberlinwohnen.de
-* telegram bot token
-* google maps api key
-* docker installed
+Flat Alert solves this problem by automating the search process. This Telegram bot scans for new listings every minute, 24/7, and sends instant notifications. It supports customizable filters for size, price, location, and public transport connectivity.
 
-### project state
-This projects primary purpose is my own use so currently it could be hard for non-programmers to change filters and customize the bot.
-But I will add these features in the future. Also note that this in very early development stage. I am happy for any contributions.
+## Features
 
-### quickstart
-use these commands to run the program on your machine.
+*   **Real-time Monitoring:** Scans inberlinwohnen.de every minute.
+*   **Instant Notifications:** Receive alerts via Telegram immediately when a flat becomes available.
+*   **Advanced Filtering:** Filter by size, price, region, and more.
+*   **Commute Analysis:** Uses the Google Maps API to calculate public transport connections to important hubs.
 
-1. download
+## Technology Stack
+
+*   **Containerization:** Docker for easy deployment and cross-platform compatibility.
+*   **Scraping:** Playwright for reliable website interaction.
+*   **Geolocation:** Google Maps API for transport connectivity analysis.
+*   **Messaging:** Telegram Bot API for user interaction.
+
+## Requirements
+
+To run this project, you will need:
+
+*   An account on inberlinwohnen.de
+*   A Telegram Bot Token
+*   A Google Maps API Key
+*   Docker installed on the host machine
+
+## Project Status
+
+This project is currently in early development and primarily designed for personal use. Customizing filters currently requires technical knowledge, but user-friendly configuration options are planned for future updates. Contributions are welcome.
+
+## Quickstart
+
+Follow these steps to run the program on your machine:
+
+1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/eisimo/flat-alert.git && cd flat-alert
+    git clone https://github.com/eisimo/flat-alert.git
+    ```
+    ```bash
+    cd flat-alert
     ```
 
-2. now you need to create your .env (see .env.example for reference)
+2.  **Configure the environment:**
+    Create a `.env` file in the root directory. Refer to `.env.example` for the required variables.
 
-3. and run the container
+3.  **Run the application:**
     ```bash
     docker compose up -d
     ```
 
-### additional information
-Tired of filling out these repetitive flat application forms?
-I am currently working on another project called [flat-apply](https://github.com/EiSiMo/flat-apply).
-It integrates seamlessly into this project on telegram and allows you to automatically apply for flats that flat-alert posted.
+## Related Projects
+
+*   [flat-apply](https://github.com/EiSiMo/flat-apply): A tool currently in development to automate the application process for flats found by Flat Alert.
