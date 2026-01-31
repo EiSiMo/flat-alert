@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 from os import getenv
 
 LANGUAGE: str = "de"
-ALREADY_NOTIFIED_FILE = "data/already_notified.txt"
 TIME_INTERVALL = 60
 
 # secrets

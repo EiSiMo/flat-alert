@@ -1,15 +1,14 @@
-import os
 import time
 from datetime import datetime
 from rich.logging import RichHandler
 from rich.console import Console
 
 from settings import *
+from paths import *
 from flat import Flat
 from scraper import Scraper
 from telegram import Telegram
 import logging
-import sys
 
 
 def setup_logging():
@@ -27,11 +26,7 @@ setup_logging()
 
 class FlatAlerter:
     def __init__(self):
-        self.ensure_data_dir()
         self.checked_ids = self.load_checked_ids()
-
-    def ensure_data_dir(self):
-        os.makedirs(os.path.dirname(ALREADY_NOTIFIED_FILE), exist_ok=True)
 
     def load_checked_ids(self):
         if not os.path.exists(ALREADY_NOTIFIED_FILE):
