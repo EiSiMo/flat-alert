@@ -55,22 +55,22 @@ class FlatAlerter:
 
     def is_flat_meeting_criteria(self, flat):
         if flat.id in self.checked_ids:
-            logger.info("\t[blue]already checked[/blue]")
+            logger.info("\talready checked")
             return False
         elif flat.rooms in [2.0, 2.5]:
-            logger.info("\t[red]wrong room number[/red]")
+            logger.info("\twrong room number")
             return False
         elif flat.total_rent > 1500:
-            logger.info("\t[red]too expensive[/red]")
+            logger.info("\ttoo expensive")
             return False
         elif flat.published_on != datetime.now().strftime("%d.%m.%Y"):
-            logger.info("\t[red]not published today[/red]")
+            logger.info("\tnot published today")
             return False
         elif flat.connectivity['morning_time'] > 50:
-            logger.info("\t[red]bad connectivity[/red]")
+            logger.info("\tbad connectivity")
             return False
         else:
-            logger.info("\t[green]flat meeting all criteria[/green]")
+            logger.info("\tflat meeting all criteria")
             return True
 
     def scan_and_notify(self):
