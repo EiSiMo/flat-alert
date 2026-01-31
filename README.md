@@ -1,10 +1,10 @@
-# Flat Alert
+# flat-alert
 
 ## Description
 
 Finding an apartment in Berlin is notoriously difficult. However, those with a WBS (housing entitlement certificate) can access state-subsidized housing via inberlinwohnen.de. New listings appear daily, but there is no waiting list; applicants are selected at random. Crucially, the number of applications per listing is capped, often causing ads to disappear within an hour. This necessitates constant monitoring of the website.
 
-Flat Alert solves this problem by automating the search process. This Telegram bot scans for new listings every minute, 24/7, and sends instant notifications. It supports customizable filters for size, price, location, and public transport connectivity.
+flat-alert solves this problem by automating the search process. This Telegram bot scans for new listings every minute, 24/7, and sends instant notifications. It supports customizable filters for size, price, location, and public transport connectivity.
 
 ## Features
 
@@ -55,4 +55,4 @@ Follow these steps to run the program on your machine:
 
 ## Related Projects
 
-*   [flat-apply](https://github.com/EiSiMo/flat-apply): A tool currently in development to automate the application process for flats found by Flat Alert.
+*   [flat-apply](https://github.com/EiSiMo/flat-apply): A tool currently in development to automate the application process for flats found by flat-alert.
