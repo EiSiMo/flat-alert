@@ -2,7 +2,12 @@
 
 ## Description
 
-Finding an apartment in Berlin is notoriously difficult. However, those with a WBS (housing entitlement certificate) can access state-subsidized housing via inberlinwohnen.de. New listings appear daily, but there is no waiting list; applicants are selected at random. Crucially, the number of applications per listing is capped, often causing ads to disappear within an hour. This necessitates constant monitoring of the website.
+Finding an apartment in Berlin is notoriously difficult.
+However, those with a [WBS](https://service.berlin.de/dienstleistung/120671/) (housing entitlement certificate) can access state-subsidized housing via 
+[inberlinwohnen.de](https://www.inberlinwohnen.de/wohnungsfinder).
+New listings appear daily, but there is no waiting list; applicants are selected at random.
+Crucially, the number of applications per listing is capped, often causing ads to disappear within an hour.
+This necessitates constant monitoring of the website.
 
 flat-alert solves this problem by automating the search process. This Telegram bot scans for new listings every minute, 24/7, and sends instant notifications. It supports customizable filters for size, price, location, and public transport connectivity.
 
@@ -24,7 +29,7 @@ flat-alert solves this problem by automating the search process. This Telegram b
 
 To run this project, you will need:
 
-*   An account on inberlinwohnen.de
+*   An account on [inberlinwohnen.de](https://www.inberlinwohnen.de/wohnungsfinder)
 *   A Telegram Bot Token
 *   A Google Maps API Key
 *   Docker installed on the host machine
