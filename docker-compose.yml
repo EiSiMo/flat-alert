@@ -2,8 +2,6 @@ services:
   flat-alert:
     image: ghcr.io/eisimo/flat-alert:latest
     container_name: flat-alert
-    volumes:
-      - ./data:/app/data
     env_file:
       - .env
     restart: unless-stopped
