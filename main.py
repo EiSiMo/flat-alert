@@ -5,6 +5,7 @@ from rich.console import Console
 
 from settings import *
 from paths import *
+from utils import *
 from flat import Flat
 from scraper import Scraper
 from telegram import Telegram
@@ -27,6 +28,7 @@ setup_logging()
 class FlatAlerter:
     def __init__(self):
         self.checked_ids = self.load_checked_ids()
+        self.last_response_hash = ""
 
     def load_checked_ids(self):
         if not os.path.exists(ALREADY_NOTIFIED_FILE):
@@ -82,6 +84,13 @@ class FlatAlerter:
         telegram = Telegram()
 
         flats_data = scraper.get_flats()
+
+        response_hashed = hash_any_object(flats_data)
+        if response_hashed == self.last_response_hash:
+            logger.info("flats did not change - skipping loop")
+            return
+        self.last_response_hash = response_hashed
+
         for number, data in enumerate(flats_data, 1):
             flat = Flat(data)
             logger.info(f"{str(number).rjust(2)}: checking {flat}")
