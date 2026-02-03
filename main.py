@@ -59,7 +59,7 @@ class FlatAlerter:
         if flat.id in self.checked_ids:
             logger.info("\talready checked")
             return False
-        elif flat.rooms in [2.0, 2.5]:
+        elif flat.rooms not in [2.0, 2.5]:
             logger.info("\twrong room number")
             return False
         elif flat.total_rent > 1500:
